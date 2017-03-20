@@ -86,7 +86,7 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
     public
     @Nullable
     Map<String, Object> getConstants() {
-        if (ContextCompat.checkSelfPermission(getCurrentActivity(),
+        if (getCurrentActivity() != null && ContextCompat.checkSelfPermission(getCurrentActivity(),
                 Manifest.permission.READ_PHONE_STATE)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(getCurrentActivity(), new String[]{Manifest.permission.READ_PHONE_STATE}, 0);
